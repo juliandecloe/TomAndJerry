@@ -9,11 +9,14 @@ var endGame = document.querySelector('.endmenuNONE');
 var highscore = document.querySelectorAll('.highscore');
 var storedInput = sessionStorage.getItem('Highscore');
 
-if(storedInput > 0){
+
+window.onload = function() {
   for(var i = 0; i < highscore.length; i++) {
+    topscore = storedInput;
     highscore[i].innerHTML = "HIGHSCORE: " + topscore;
   }
-}
+} 
+
 
 function startGame(event) {
 	hideMenu.classList.add('gamebegins');
@@ -163,7 +166,7 @@ if(storedInput === null || storedInput === undefined) {
 }
 
 function topScore() {
-  console.log(topscore)
+  console.log(sessionStorage.getItem('Highscore'))
   if (score >= topscore) {
     topscore = score;
     for(var i = 0; i < highscore.length; i++) {
