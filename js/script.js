@@ -152,11 +152,13 @@ function pointCounter() {
 }
 
 if(storedInput > 0) {
+  console.log('if')
   topscore = storedInput;
   for(var i = 0; i < highscore.length; i++) {
     highscore[i].innerHTML = "HIGHSCORE: " + topscore;
   }
 } else {
+  console.log('else')
   var topscore = 0;
 }
 
