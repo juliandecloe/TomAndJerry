@@ -7,16 +7,7 @@ var jeromImg = document.querySelector('.jerom');
 var points = document.querySelectorAll('.points');
 var endGame = document.querySelector('.endmenuNONE');
 var highscore = document.querySelectorAll('.highscore');
-var storedInput = sessionStorage.getItem('Highscore');
-
-
-window.onload = function() {
-  for(var i = 0; i < highscore.length; i++) {
-    topscore = storedInput;
-    highscore[i].innerHTML = "HIGHSCORE: " + topscore;
-  }
-} 
-
+var storedInput = sessionStorage.getItem('Highscore'); 
 
 function startGame(event) {
 	hideMenu.classList.add('gamebegins');
@@ -165,8 +156,14 @@ if(storedInput === null || storedInput === undefined) {
   topscore = storedInput;
 }
 
+for(var i = 0; i < highscore.length; i++) {
+  highscore[i].innerHTML = "HIGHSCORE: " + topscore;
+}
+
+
+
 function topScore() {
-  console.log(sessionStorage.getItem('Highscore'))
+  console.log(storedInput)
   if (score >= topscore) {
     topscore = score;
     for(var i = 0; i < highscore.length; i++) {
