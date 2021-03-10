@@ -154,11 +154,11 @@ if(storedInput === null || storedInput === undefined) {
   var topscore = 0;
 } else {
   topscore = storedInput;
+  for(var i = 0; i < highscore.length; i++) {
+    highscore[i].innerHTML = "HIGHSCORE: " + topscore;
+  }
 }
 
-for(var i = 0; i < highscore.length; i++) {
-  highscore[i].innerHTML = "HIGHSCORE: " + topscore;
-}
 
 
 
