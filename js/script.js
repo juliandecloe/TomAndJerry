@@ -7,7 +7,7 @@ var jeromImg = document.querySelector('.jerom');
 var points = document.querySelectorAll('.points');
 var endGame = document.querySelector('.endmenuNONE');
 var highscore = document.querySelectorAll('.highscore');
-var storedInput = localStorage.getItem('Highscore'); 
+var storedInput = sessionStorage.getItem('Highscore'); 
 
 
 function startGame(event) {
@@ -167,7 +167,7 @@ function topScore() {
     for(var i = 0; i < highscore.length; i++) {
       highscore[i].innerHTML = "HIGHSCORE: " + topscore;
     }
-    localStorage.setItem('Highscore', topscore);
+    sessionStorage.setItem('Highscore', topscore);
   }
 }
 
