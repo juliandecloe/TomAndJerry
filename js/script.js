@@ -150,7 +150,7 @@ function pointCounter() {
   }
 }
 
-if(storedInput === null || storedInput === undefined) {
+if(storedInput == null || storedInput == undefined) {
   var topscore = 0;
 } else {
   topscore = storedInput;
@@ -158,9 +158,6 @@ if(storedInput === null || storedInput === undefined) {
     highscore[i].innerHTML = "HIGHSCORE: " + topscore;
   }
 }
-
-
-
 
 function topScore() {
   console.log(storedInput)
