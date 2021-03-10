@@ -8,6 +8,8 @@ var points = document.querySelectorAll('.points');
 var endGame = document.querySelector('.endmenuNONE');
 var highscore = document.querySelectorAll('.highscore');
 var storedInput = sessionStorage.getItem('Highscore'); 
+var localInput = localStorage.getItem('Highscore');
+
 
 function startGame(event) {
 	hideMenu.classList.add('gamebegins');
@@ -150,7 +152,12 @@ function pointCounter() {
   }
 }
 
+window.onbeforeunload = function() {
+  localStorage.setItem('Highscore', storedInput);
+}
+
 if(storedInput >= 0) {
+  storedInput = localInput;
   topscore = storedInput;
   for(var i = 0; i < highscore.length; i++) {
     highscore[i].innerHTML = "HIGHSCORE: " + topscore;
