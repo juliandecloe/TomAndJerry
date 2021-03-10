@@ -150,16 +150,13 @@ function pointCounter() {
   }
 }
 
-if(storedInput == null || storedInput == undefined) {
-  var topscore = 0;
-  for(var i = 0; i < highscore.length; i++) {
-    highscore[i].innerHTML = "HIGHSCORE: " + topscore;
-  }
-} else {
+if(storedInput >= 0) {
   topscore = storedInput;
   for(var i = 0; i < highscore.length; i++) {
     highscore[i].innerHTML = "HIGHSCORE: " + topscore;
   }
+} else {
+  var topscore = 0;
 }
 
 function topScore() {
